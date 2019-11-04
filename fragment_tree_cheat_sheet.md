@@ -1,10 +1,26 @@
-# GRSIsort fragment tree cheat sheet
+# GRSISort fragment tree cheat sheet
 
-This document contains tips and tricks for using GRSIsort (https://github.com/GRIFFINCollaboration/GRSISort) fragment trees.
+This document contains tips and tricks for using GRSISort (https://github.com/GRIFFINCollaboration/GRSISort) fragment trees.
 
-## Fragment vs. bad fragment tree
+## Loading the fragment tree file
 
-Events which fail to sort are placed in the `BadFragmentTree` rather than the `FragmentTree`.  To inspect these events, replace `FragmentTree` in any of the commands listed below with `BadFragmentTree`.
+The fragment tree data needs to be loaded into GRSISort for any of this to work
+
+```
+grsisort -l /path/to/fragmentRUN_000.root
+```
+
+### Fragment vs. bad fragment tree
+
+Events which fail to sort are placed in the `BadFragmentTree` rather than the `FragmentTree` in the fragment tree ROOT file.  To inspect these events, replace `FragmentTree` in any of the commands listed below with `BadFragmentTree`.
+
+## Drawing a hit pattern
+
+For channels 0 through 1000:
+
+```
+FragmentTree->Draw("GetChannelNumber()>>(1000,0,1000)","","colz")
+```
 
 ## Drawing a time series
 
