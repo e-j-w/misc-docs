@@ -1,8 +1,30 @@
 # TIPsort cheat sheet
 
-This document contains tips and tricks for using TIPsort.
+This document contains tips and tricks for using TIPsort (https://github.com/e-j-w/TIPsort).
+
+## Suppression and charge parameters
+
+For the 22Ne and 28Mg dataset, suppression was performed online, supLow=4000 and supHigh=5000 is acceptable.  useCharge=1.
+
+## Doppler shift grouping
+
+DS grouping requires the `Doppler_shift_group_map.par` parameter file generated using the `tree2doppler_map` or `tree2doppler_2Dmap` codes from FileConvTools (https://github.com/e-j-w/FileConvTools).
 
 ## Making gated spectra
+
+### No Doppler correction
+
+Ring grouped, gate bounds in keV:
+
+```
+Tigress_ECalABSuppSumEGated master_file_name supLow supHigh gateELow gateEHigh
+```
+
+DS grouped, gate bounds in keV:
+
+```
+TigressCsIArray_ECalABSuppSumEGated_Group master_file_name supLow supHigh gateELow gateEHigh
+```
 
 ### Doppler correction based on CsI ball PID
 
