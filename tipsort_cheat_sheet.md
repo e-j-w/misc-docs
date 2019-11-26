@@ -37,7 +37,7 @@ TigressCsIArray_ECalABSuppSumDSEGated_GroupPID master_file_name supLow supHigh u
 Ring grouped, gate is on Doppler shifted gamma (gate bounds in keV), spectrum is Doppler corrected:
 
 ```
-TigressCsI_ECalABSuppDSReconstructedSumEGatedPID master_file_name supLow supHigh useCharge gateELow gateEHigh fudge_factor
+TigressCsIArray_ECalABSuppDSReconstructedSumEGatedPID master_file_name supLow supHigh useCharge gateELow gateEHigh fudge_factor
 ```
 
 Ring grouped, gate is on Doppler shifted gamma (gate bounds in keV), spectrum is *not* Doppler corrected:
