@@ -4,7 +4,7 @@ This document contains tips and tricks for using GRSISort (https://github.com/GR
 
 ## Loading the fragment tree file
 
-The fragment tree data needs to be loaded into GRSISort for any of this to work
+The fragment tree data needs to be loaded into GRSISort for any of this to work.
 
 ```
 grsisort -l /path/to/fragmentRUN_000.root
@@ -43,3 +43,14 @@ To plot channel number vs. DAQ timestamp, one could use:
 ```
 FragmentTree->Draw("GetChannelNumber():(fDaqTimeStamp-1572649571)/60>>(1000,0,3000,1000,0,1000)","","colz")
 ```
+
+## Energy vs. channel (or any other 2D plot)
+
+For calibrated data (calibration parameters from the cal file are applied to both fragment and analysis trees), energy is in units of keV.
+
+
+```
+FragmentTree->Draw("GetChannelNumber():GetEnergy()>>(5000,0,5000,1000,0,1000)","","colz")
+```
+
+Here, energy is on the x axis (range 0 to 5000, in keV if calibrated), and channel is on the y axis (range 0 to 1000).
